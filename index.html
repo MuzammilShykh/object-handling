@@ -29,9 +29,9 @@
 
                 <!-- <form action="">  -->
                 <legend> Program 1</legend>
-                <h6> Write a JavaScript function to get the current date.  </h6>
+                <h6> Write a JavaScript function to get the current date. </h6>
                 <label for="">Click Button to get Current Date</label> <br>
-                
+
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program1()">Click here</button>
 
@@ -42,7 +42,7 @@
 
             <div class="col-lg-3" id="divProgram2">
                 <legend> Program 2</legend>
-                <h6> Write a JavaScript function to get the number of days in a month.    </h6>
+                <h6> Write a JavaScript function to get the number of days in a month. </h6>
                 <!-- <label for="">Enter Month (First Three Characters) :</label> <br>
                 <input type="text" name="" id="program2" required maxlength="3"> -->
                 <select name="" id="selectMonth">
@@ -69,7 +69,7 @@
             <div class="col-lg-3" id="divProgram3">
 
                 <legend> Program 3</legend>
-                <h6> Write a JavaScript function to get the month name from a particular date.  </h6>
+                <h6> Write a JavaScript function to get the month name from a particular date. </h6>
                 <label for="">Enter Date: </label> <br>
                 <input type="text" name="numInput" id="program3" required maxlength="10" placeholder="mm/dd/yyyy">
                 <button type="button" class="btn btn-primary btn-sm" onclick="program3()">Submit</button>
@@ -80,10 +80,10 @@
 
             <div class="col-lg-3" id="divProgram4">
                 <legend> Program 4</legend>
-                <h6> Write a JavaScript function to add specified minutes to a Date object.    </h6>
+                <h6> Write a JavaScript function to add specified minutes to a Date object. </h6>
                 <label for="">Enter minutes:</label> <br>
                 <input type="text" name="program4" id="program4" required maxlength="2" placeholder="01 to 60"> <br>
-                
+
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program4()">Submit</button>
 
@@ -109,7 +109,7 @@
                 <input type="text" name="program5" id="program5a" required maxlength="2" placeholder="mm"> <br>
                 <label for="">Enter Year:</label> <br>
                 <input type="text" name="program5" id="program5b" required maxlength="4" placeholder="yyyy"> <br>
-                
+
 
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program5()">Submit</button>
@@ -121,7 +121,7 @@
             <div class="col-lg-3" id="divProgram6">
 
                 <legend> Program 6</legend>
-                <h6> Write a JavaScript function to calculate 'yesterday day'.   </h6>
+                <h6> Write a JavaScript function to calculate 'yesterday day'. </h6>
                 <label for="">Enter Date:</label> <br>
                 <input type="text" name="program6" id="program6" required maxlength="2" placeholder="dd"> <br>
                 <label for="">Enter Month (0 is January):</label> <br>
@@ -135,14 +135,18 @@
             <div class="col-lg-3" id="divProgram7">
 
                 <legend> Program 7 </legend>
-                <h6> js program to search all occurrences of a character in given string. </h6>
-                <label for="">Enter a string:</label> <br>
-                <input type="text" name="program7" id="program7" required maxlength="" placeholder="Enter here"> <br>
+                <h6> Write a JavaScript function to add specified months to a date. </h6>
+                <label for="">Enter Date:</label> <br>
+                <input type="text" class="program7" id="program7" required maxlength="2" placeholder="dd"> <br>
 
-                <label for="">Enter a Character:</label> <br>
-                <input type="text" name="program7" id="program7a" required maxlength="1" placeholder="Enter here">
+                <label for="">Enter Month Name:</label> <br>
+                <input type="text" class="program7" id="program7a" required maxlength="" placeholder="january"> <br>
 
+                <label for="">Enter Year:</label> <br>
+                <input type="text" class="program7" id="program7b" required maxlength="4" placeholder="yyyy"> <br>
 
+                <label for="">Enter Number of Months to add:</label> <br>
+                <input type="number" class="program7" id="program7c" required maxlength="" placeholder="enter here"> <br>
                 <button type="button" class="btn btn-primary btn-sm" onclick="program7()">Submit</button>
             </div>
 
@@ -152,13 +156,18 @@
             <div class="col-lg-3" id="divProgram8">
 
                 <legend> Program 8</legend>
-                <h6> js program to count occurrences of a character in given string. </h6>
+                <h6> Write a JavaScript function to add specified weeks to a date. </h6>
+                <label for="">Enter Date:</label> <br>
+                <input type="text" class="program8" id="program8" required maxlength="2" placeholder="dd"> <br>
 
-                <label for="">Enter a string:</label> <br>
-                <input type="text" name="program8" id="program8" required maxlength="" placeholder="Enter here"> <br>
+                <label for="">Enter Month Name:</label> <br>
+                <input type="text" class="program8" id="program8a" required maxlength="" placeholder="january"> <br>
 
-                <label for="">Enter a Character:</label> <br>
-                <input type="text" name="program8" id="program8a" required maxlength="1" placeholder="Enter here">
+                <label for="">Enter Year:</label> <br>
+                <input type="text" class="program8" id="program8b" required maxlength="4" placeholder="yyyy"> <br>
+
+                <label for="">Enter Number of Weeks to add:</label> <br>
+                <input type="number" class="program8" id="program8c" required maxlength="" placeholder="enter here"> <br>
 
 
 
@@ -173,25 +182,39 @@
         <div class="row">
             <div class="col-lg-3" id="divProgram9"> <br>
                 <legend> Program 9</legend>
-                <h6> js program to remove first occurrence of a character from string. </h6>
-                <label for="">Enter a string:</label> <br>
-                <input type="text" name="program9" id="program9" required maxlength="" placeholder="Enter here"> <br>
+                <h6>  Write a JavaScript function to add specified years to a date.   . </h6>
+                <label for="">Enter Date:</label> <br>
+                <input type="text" class="program9" id="program9" required maxlength="2" placeholder="dd"> <br>
 
-                <label for="">Enter a Character:</label> <br>
-                <input type="text" name="program9" id="program9a" required maxlength="1" placeholder="Enter here">
+                <label for="">Enter Month Name:</label> <br>
+                <input type="text" class="program9" id="program9a" required maxlength="" placeholder="january"> <br>
+
+                <label for="">Enter Year:</label> <br>
+                <input type="text" class="program9" id="program9b" required maxlength="4" placeholder="yyyy"> <br>
+
+                <label for="">Enter Number of Years to add:</label> <br>
+                <input type="number" class="program9" id="program9c" required maxlength="" placeholder="enter here"> <br>
 
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program9()">Submit</button>
             </div>
+
+
+
             <div class="col-lg-3" id="divProgram10"> <br>
                 <legend> Program 10</legend>
-                <h6>js program to remove last occurrence of a character from string.</h6>
+                <h6> Write a JavaScript function to get timezone offset in seconds.   </h6>
 
-                <label for="">Enter a string:</label> <br>
-                <input type="text" name="program10" id="program10" required maxlength="" placeholder="Enter here"> <br>
+                <label for="">Enter Date:</label> <br>
+                <input type="text" class="program10" id="program10" required maxlength="2" placeholder="dd"> <br>
 
-                <label for="">Enter a Character:</label> <br>
-                <input type="text" name="program10" id="program10a" required maxlength="1" placeholder="Enter here">
+                <label for="">Enter Month Name:</label> <br>
+                <input type="text" class="program10" id="program10a" required maxlength="" placeholder="january"> <br>
+
+                <label for="">Enter Year:</label> <br>
+                <input type="text" class="program10" id="program10b" required maxlength="4" placeholder="yyyy"> <br>
+
+               
 
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program10()">Submit</button>
@@ -199,15 +222,17 @@
 
 
             <div class="col-lg-3" id="divProgram11"> <br>
-                <legend> Program 11 not complete</legend>
-                <h6>js program remove all occurrences of a character from string.</h6>
+                <legend> Program 11 </legend>
+                <h6> Write a JavaScript function to get a full numeric representation of a year (4 digits).   </h6>
 
-                <label for="">Enter String:</label> <br>
-                <input type="text" name="program11" id="program11" required maxlength="" placeholder="Enter here"><br>
+                <label for="">Enter Date:</label> <br>
+                <input type="text" class="program11" id="program11" required maxlength="2" placeholder="dd"> <br>
 
+                <label for="">Enter Month Name:</label> <br>
+                <input type="text" class="program11" id="program11a" required maxlength="" placeholder="january"> <br>
 
-                <label for="">Enter a Character:</label> <br>
-                <input type="text" name="program11" id="program11a" required maxlength="1" placeholder="Enter here">
+                <label for="">Enter Year:</label> <br>
+                <input type="text" class="program11" id="program11b" required maxlength="4" placeholder="yyyy"> <br>
 
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program11()">Submit</button>
@@ -217,10 +242,17 @@
 
             <div class="col-lg-3" id="divProgram12"> <br>
                 <legend> Program 12</legend>
-                <h6> Js program to find sum of all natural numbers between 1 to n.</h6>
+                <h6> Write a JavaScript function to get a two digit representation of a year.   </h6>
 
-                <label for="">Enter a Number</label> <br>
-                <input type="number" name="program12" id="program12" required maxlength="" placeholder="Enter here">
+                <label for="">Enter Date:</label> <br>
+                <input type="text" class="program12" id="program12" required maxlength="2" placeholder="dd"> <br>
+
+                <label for="">Enter Month Name:</label> <br>
+                <input type="text" class="program12" id="program12a" required maxlength="" placeholder="january"> <br>
+
+                <label for="">Enter Year:</label> <br>
+                <input type="text" class="program12" id="program12b" required maxlength="4" placeholder="yyyy"> <br>
+
 
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program12()">Submit</button>
@@ -249,11 +281,16 @@
 
             <div class="col-lg-3" id="divProgram13"> <br>
                 <legend> Program 13 </legend>
-                <h6> Js program to find sum of all even numbers between 1 to n.</h6>
+                <h6> Write a JavaScript function to get a short textual representation of a month, three letters (Jan through Dec).   .</h6>
 
-                <label for="">Enter a Number:</label> <br>
-                <input type="tel" name="program13" id="program13" required maxlength="" placeholder="Enter here">
+                <label for="">Enter Date:</label> <br>
+                <input type="text" class="program13" id="program13" required maxlength="2" placeholder="dd"> <br>
 
+                <label for="">Enter Month Name:</label> <br>
+                <input type="text" class="program13" id="program13a" required maxlength="" placeholder="january"> <br>
+
+                <label for="">Enter Year:</label> <br>
+                <input type="text" class="program13" id="program13b" required maxlength="4" placeholder="yyyy"> <br>
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program13()">Submit</button>
             </div>
@@ -261,10 +298,15 @@
 
             <div class="col-lg-3" id="divProgram14"> <br>
                 <legend> Program 14</legend>
-                <h6> Js program to find sum of all odd numbers between 1 to n.</h6>
+                <h6> Write a JavaScript function to get a full textual representation of a month, such as January or June.   </h6>
+                <label for="">Enter Date:</label> <br>
+                <input type="text" class="program14" id="program14" required maxlength="2" placeholder="dd"> <br>
 
-                <label for="">Enter a Number:</label> <br>
-                <input type="text" name="program14" id="program14" required maxlength="" placeholder="Enter here">
+                <label for="">Enter Month Name:</label> <br>
+                <input type="text" class="program14" id="program14a" required maxlength="3" placeholder="jan"> <br>
+
+                <label for="">Enter Year:</label> <br>
+                <input type="text" class="program14" id="program14b" required maxlength="4" placeholder="yyyy"> <br>
 
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program14()">Submit</button>
@@ -273,10 +315,17 @@
 
             <div class="col-lg-3" id="divProgram15"> <br>
                 <legend> Program 15</legend>
-                <h6> Js program to print multiplication table of any number.</h6>
+                <h6> Write a JavaScript function to get a numeric representation of a month, with leading zeros (01 through 12).   </h6>
 
-                <label for="">Enter a Number:</label> <br>
-                <input type="tel" name="program15" id="program15" required maxlength="" placeholder="Enter here">
+                <label for="">Enter Date:</label> <br>
+                <input type="text" class="program15" id="program15" required maxlength="2" placeholder="dd"> <br>
+
+                <label for="">Enter Month Name:</label> <br>
+                <input type="text" class="program15" id="program15a" required maxlength="3" placeholder="jan"> <br>
+
+                <label for="">Enter Year:</label> <br>
+                <input type="text" class="program15" id="program15b" required maxlength="4" placeholder="yyyy"> <br>
+
 
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program15()">Submit</button>
@@ -285,10 +334,16 @@
 
             <div class="col-lg-3" id="divProgram16"> <br>
                 <legend> Program 16</legend>
-                <h6> Js program to find first and last digit of a number.</h6>
+                <h6> Write a JavaScript program to calculate age.</h6>
 
-                <label for="">Enter a Number :</label> <br>
-                <input type="tel" name="program16" id="program16" required maxlength="" placeholder="Enter here">
+                <label for="">Enter Date:</label> <br>
+                <input type="text" class="program16" id="program16" required maxlength="2" placeholder="dd"> <br>
+
+                <label for="">Enter Month Name:</label> <br>
+                <input type="text" class="program16" id="program16a" required maxlength="3" placeholder="jan"> <br>
+
+                <label for="">Enter Year:</label> <br>
+                <input type="text" class="program16" id="program16b" required maxlength="4" placeholder="yyyy"> <br>
 
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program16()">Submit</button>
@@ -297,10 +352,16 @@
 
             <div class="col-lg-3" id="divProgram17"> <br>
                 <legend> Program 17</legend>
-                <h6> js program to find sum of first and last digit of a number.</h6>
+                <h6> Write a JavaScript function to get a full textual representation of the day of the week (Sunday through Saturday).   </h6>
+                <label for="">Enter Date:</label> <br>
+                <input type="text" class="program17" id="program17" required maxlength="2" placeholder="dd"> <br>
 
-                <label for="">Enter a Number:</label> <br>
-                <input type="tel" name="program17" id="program17" required maxlength="" placeholder="Enter here">
+                <label for="">Enter Month Name:</label> <br>
+                <input type="text" class="program17" id="program17a" required maxlength="3" placeholder="jan"> <br>
+
+                <label for="">Enter Year:</label> <br>
+                <input type="text" class="program17" id="program17b" required maxlength="4" placeholder="yyyy"> <br>
+
 
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program17()">Submit</button>
@@ -309,10 +370,17 @@
 
             <div class="col-lg-3" id="divProgram18"> <br>
                 <legend> Program 18</legend>
-                <h6> js program to calculate sum of digits of a number.</h6>
+                <h6> Write a JavaScript function to get a textual representation of a day (three letters, Mon through Sun).   </h6>
 
-                <label for="">Enter a Number:</label> <br>
-                <input type="text" name="program18" id="program18" required maxlength="" placeholder="Enter here">
+                <label for="">Enter Date:</label> <br>
+                <input type="text" class="program18" id="program18" required maxlength="2" placeholder="dd"> <br>
+
+                <label for="">Enter Month Name:</label> <br>
+                <input type="text" class="program18" id="program18a" required maxlength="3" placeholder="jan"> <br>
+
+                <label for="">Enter Year:</label> <br>
+                <input type="text" class="program18" id="program18b" required maxlength="4" placeholder="yyyy"> <br>
+
 
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program18()">Submit</button>
@@ -323,13 +391,11 @@
 
             <div class="col-lg-3" id="divProgram19"> <br>
                 <legend> Program 19</legend>
-                <h6> js program to calculate product of digits of a number.</h6>
-
-                <label for="">Enter a Number:</label> <br>
-                <input type="tel" name="program19" id="program19" required maxlength="" placeholder="Enter here">
+                <h6>  Write a JavaScript function to count the number of days passed since beginning of the year(2021).   </h6>
 
 
-                <button type="button" class="btn btn-primary btn-sm" onclick="program19()">Submit</button>
+
+                <button type="button" class="btn btn-primary btn-sm" onclick="program19()">check</button>
             </div>
 
 
@@ -337,10 +403,10 @@
 
             <div class="col-lg-3" id="divProgram20"> <br>
                 <legend> Program 20 </legend>
-                <h6> js program to swap first and last digits of a number..</h6>
+                <h6> Write a JavaScript function to get the amount of days of a year. </h6>
 
-                <label for="">Enter a Number:</label> <br>
-                <input type="tel" name="program20" id="program20" required maxlength="" placeholder="Enter here">
+                <label for="">Enter Year:</label> <br>
+                <input type="text" class="program20" id="program20" required maxlength="4" placeholder="yyyy"> <br>
 
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program20()">Submit</button>
@@ -358,16 +424,26 @@
 
             <div class="col-lg-3" id="divProgram21"> <br>
                 <legend> Program 21</legend>
-                <h6> js program replace first occurrence of a character with another in a string.</h6>
+                <h6> Write a JavaScript function to get the last day of a month.   </h6>
 
-                <label for="">Enter string:</label> <br>
-                <input type="text" name="program21" id="program21" required maxlength="" placeholder="Enter here"> <br>
-                <label for="">Replace:</label> <br>
-                <input type="text" name="program21" id="program21a" required maxlength="1"
-                    placeholder="Enter a Character"> <br>
-                <label for="">Replace With:</label> <br>
-                <input type="text" name="program21" id="program21b" required maxlength="1"
-                    placeholder="Enter a Character">
+                <label for="">Enter Year:</label> <br>
+                <input type="text" class="program21" id="program21" required maxlength="4" placeholder="yyyy">
+                <select name="" id="program21a">
+                    <option value="" disabled selected>Select month</option>
+                    <option value="0">January</option>
+                    <option value="1">Febraury</option>
+                    <option value="2">March</option>
+                    <option value="3">April</option>
+                    <option value="4">May</option>
+                    <option value="5">June</option>
+                    <option value="6">July</option>
+                    <option value="7">August</option>
+                    <option value="8">September</option>
+                    <option value="9">October</option>
+                    <option value="10">November</option>
+                    <option value="11">December</option>
+                </select> <br> <br>
+               
 
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program21()">Submit</button>
@@ -377,16 +453,17 @@
 
             <div class="col-lg-3" id="divProgram22"> <br>
                 <legend> Program 22 </legend>
-                <h6> js program replace last occurrence of a character with another in a string.</h6>
+                <h6>  Write a JavaScript function to compare dates (i.e. greater than, less than or equal to).   </h6>
 
-                <label for="">Enter string:</label> <br>
-                <input type="text" name="program22" id="program22" required maxlength="" placeholder="Enter here"> <br>
-                <label for="">Replace:</label> <br>
-                <input type="text" name="program22" id="program22a" required maxlength="1"
-                    placeholder="Enter a Character"> <br>
-                <label for="">Replace With:</label> <br>
-                <input type="text" name="program22" id="program22b" required maxlength="1"
-                    placeholder="Enter a Character">
+                <label for="">Enter Date 1: </label> <br>
+                <input type="text" class="program22" id="program22" required maxlength="2" placeholder="dd"> 
+                <input type="text" class="program22" id="program22a" required maxlength="2" placeholder="mm">
+                <input type="text" class="program22" id="program22b" required maxlength="4" placeholder="yyyy"> <br>
+                <label for="">Enter Date 2:</label> <br>
+                <input type="text" class="program22" id="program22c" required maxlength="2" placeholder="dd"> 
+                <input type="text" class="program22" id="program22d" required maxlength="2" placeholder="mm">
+                <input type="text" class="program22" id="program22e" required maxlength="4" placeholder="yyyy"> <br>
+
 
 
 
@@ -395,18 +472,17 @@
 
 
             <div class="col-lg-3" id="divProgram23"> <br>
-                <legend> Program 23 not complete </legend>
-                <h6> js program replace all occurrence of a character with another in a string.</h6>
+                <legend> Program 23 </legend>
+                <h6>  Write a JavaScript function to get difference between two dates in days. </h6>
 
-                <label for="">Enter string:</label> <br>
-                <input type="text" name="program23" id="program23" required maxlength="" placeholder="Enter here"> <br>
-                <label for="">Replace:</label> <br>
-                <input type="text" name="program23" id="program23a" required maxlength="1"
-                    placeholder="Enter a Character"> <br>
-                <label for="">Replace With:</label> <br>
-                <input type="text" name="program23" id="program23b" required maxlength="1"
-                    placeholder="Enter a Character">
-
+                <label for="">Enter Date 1: </label> <br>
+                <input type="text" class="program22" id="program23" required maxlength="2" placeholder="dd"> 
+                <input type="text" class="program22" id="program23a" required maxlength="2" placeholder="mm">
+                <input type="text" class="program22" id="program23b" required maxlength="4" placeholder="yyyy"> <br>
+                <label for="">Enter Date 2:</label> <br>
+                <input type="text" class="program22" id="program23c" required maxlength="2" placeholder="dd"> 
+                <input type="text" class="program22" id="program23d" required maxlength="2" placeholder="mm">
+                <input type="text" class="program22" id="program23e" required maxlength="4" placeholder="yyyy"> <br>
 
 
 
@@ -416,13 +492,14 @@
 
 
             <div class="col-lg-3" id="divProgram24"> <br>
-                <legend> Program 24 not complete </legend>
-                <h6> js program to find highest frequency character in a string.</h6>
+                <legend> Program 24 </legend>
+                <h6>  Write a JavaScript function to get the last day of a month. </h6>
 
-                <label for="">Enter string:</label> <br>
-                <input type="text" name="program24" id="program24" required maxlength="" placeholder="Enter here"> <br>
-                <!-- <label for="">Enter Character:</label> <br>
-        <input type="text" name="program24" id="inputProgram24" required maxlength="1" placeholder="Enter here">  -->
+                <label for="">Enter Date : </label> <br>
+               
+                <input type="text" class="program22" id="program24a" required maxlength="2" placeholder="mm">
+                <input type="text" class="program22" id="program24b" required maxlength="4" placeholder="yyyy"> 
+               
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program24()">Submit</button>
             </div>
@@ -442,10 +519,16 @@
 
 
             <div class="col-lg-3" id="divProgram25">
-                <legend> Program 25</legend>
-                <h6> js program to remove all extra blank spaces from given string. </h6>
-                <label for="">Enter a String Value:</label> <br>
-                <input type="text" name="program25" id="program25" required maxlength="" placeholder="Enter a Number">
+                <legend> Program 25 (49)</legend>
+                <h6> Write a JavaScript function to get time differences in years between two dates. </h6>
+                <label for="">Enter Date 1: </label> <br>
+                <input type="text" class="program22" id="program25" required maxlength="2" placeholder="dd"> 
+                <input type="text" class="program22" id="program25a" required maxlength="2" placeholder="mm">
+                <input type="text" class="program22" id="program25b" required maxlength="4" placeholder="yyyy"> <br>
+                <label for="">Enter Date 2:</label> <br>
+                <input type="text" class="program22" id="program25c" required maxlength="2" placeholder="dd"> 
+                <input type="text" class="program22" id="program25d" required maxlength="2" placeholder="mm">
+                <input type="text" class="program22" id="program25e" required maxlength="4" placeholder="yyyy"> <br>
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program25()">Submit</button>
 
@@ -453,10 +536,16 @@
 
 
             <div class="col-lg-3" id="divProgram26">
-                <legend> Program 26</legend>
-                <h6> js program to trim leading white space characters from given string. </h6>
-                <label for="">Enter a String Value:</label> <br>
-                <input type="text" name="program26" id="program26" required maxlength="" placeholder="Enter here">
+                <legend> Program 26 (48)</legend>
+                <h6>Write a JavaScript function to get time differences in months between two dates. </h6>
+                <label for="">Enter Date 1: </label> <br>
+                <input type="text" class="program22" id="program26" required maxlength="2" placeholder="dd"> 
+                <input type="text" class="program22" id="program26a" required maxlength="2" placeholder="mm">
+                <input type="text" class="program22" id="program26b" required maxlength="4" placeholder="yyyy"> <br>
+                <label for="">Enter Date 2:</label> <br>
+                <input type="text" class="program22" id="program26c" required maxlength="2" placeholder="dd"> 
+                <input type="text" class="program22" id="program26d" required maxlength="2" placeholder="mm">
+                <input type="text" class="program22" id="program26e" required maxlength="4" placeholder="yyyy"> <br>
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program26()">Submit</button>
 
@@ -465,11 +554,17 @@
 
 
             <div class="col-lg-3" id="divProgram27">
-                <legend> Program 27 </legend>
-                <h6> js program to trim trailing white space characters from given string. </h6> <br>
+                <legend> Program 27(47) </legend>
+                <h6>Write a JavaScript function to get time differences in weeks between two dates.   . </h6> <br>
 
-                <label for="">Enter a String Value:</label> <br>
-                <input type="text" name="program27" id="program27" required maxlength="" placeholder="Enter here">
+                <label for="">Enter Date 1: </label> <br>
+                <input type="text" class="program22" id="program27" required maxlength="2" placeholder="dd"> 
+                <input type="text" class="program22" id="program27a" required maxlength="2" placeholder="mm">
+                <input type="text" class="program22" id="program27b" required maxlength="4" placeholder="yyyy"> <br>
+                <label for="">Enter Date 2:</label> <br>
+                <input type="text" class="program22" id="program27c" required maxlength="2" placeholder="dd"> 
+                <input type="text" class="program22" id="program27d" required maxlength="2" placeholder="mm">
+                <input type="text" class="program22" id="program27e" required maxlength="4" placeholder="yyyy"> <br>
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program27()">Submit</button>
 
@@ -479,12 +574,10 @@
 
 
             <div class="col-lg-3" id="divProgram28">
-                <legend> Program 28</legend>
-                <h6> js program to trim both leading and trailing white space characters from given string. </h6> <br>
+                <legend> Program 28(50)</legend>
+                <h6>  Write a JavaScript function to get the week start date.   </h6> <br>
 
-                <label for="">Enter a String Value:</label> <br>
-
-                <input type="text" name="program28" id="program28" required maxlength="" placeholder="Enter here">
+                
 
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program28()">Submit</button>
@@ -501,11 +594,8 @@
 
             <div class="col-lg-3" id="divProgram29">
                 <legend> Program 29</legend>
-                <h6> js program to merge two array to third array.</h6>
-                <label for="">Enter No. of Elements</label> <br>
-                <input type="number" id="program29" placeholder="Enter here"> <br>
-                <label for="">Enter No. of Elements</label> <br>
-                <input type="number" id="program29a" placeholder="Enter here"> <br>
+                <h6> 51. Write a JavaScript function to get the week end date.</h6>
+              
 
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program29()">Submit</button>
@@ -583,7 +673,7 @@
 
             </div>
 
-            
+
 
             <div class="col-lg-3" id="divProgram35">
                 <legend> Program 35</legend>
@@ -591,7 +681,7 @@
                 <label for="">Enter values: </label> <br>
                 <input type="number" id="program35" placeholder="Enter co-efficient of x^2"> <br>
                 <input type="number" id="program35a" placeholder="Enter co-efficient of x"> <br>
-                <input type="number" id="program35b" placeholder="Enter constant"> 
+                <input type="number" id="program35b" placeholder="Enter constant">
 
 
                 <button type="button" class="btn btn-primary btn-sm" onclick="program35()">Submit</button>

@@ -246,7 +246,7 @@ function program6() {
         console.log(getDate);
         getDate.setDate(date - 1)
 
-       
+
 
 
         if (getDate == "Invalid Date") {
@@ -271,6 +271,11 @@ function program6() {
 
 
 
+
+
+
+
+
 //program 7 
 
 var div7 = document.getElementById("divProgram7");
@@ -279,35 +284,30 @@ div7.appendChild(pTag7)
 pTag7.style.color = "green"
 
 function program7() {
-    var inputstr = document.getElementById("program7").value;
-    var inputChar = document.getElementById("program7a").value;
-    indexCal = ""
-    if ((/[a-zA-Z]/).test(inputChar, inputstr)) {
+    try {
+        var getDate = document.getElementById("program7").value;
+        getDate = parseInt(getDate)
+        var getMonth = document.getElementById("program7a").value;
+        var getYear = document.getElementById("program7b").value;
+        getYear = parseInt(getYear)
+        var add = document.getElementById("program7c").value;
+        add = parseInt(add)
+        var date = new Date(`${getDate} ${getMonth}, ${getYear}`)
+        var months = date.getMonth()
+        //console.log(months);
+        var addMonths = months + add;
+        date.setMonth(addMonths)
 
-        if (inputstr.search(inputChar) !== -1) {
-
-            for (let i = 0; i < inputstr.length; i++) {
-                if (inputstr.charAt(i) == inputChar) {
-                    indexCal += i + ","
-
-                }
-
-            }
-            console.log(`${inputChar} Occurs at index : ${indexCal}`);
-            pTag7.innerHTML = `${inputChar} Occurs at index : ${indexCal}`
+        if (date == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
+        } else {
+            pTag7.innerHTML = `Date After ${add} Months "${date}"`
         }
-        else {
-            pTag7.style.color = "red"
-            pTag7.innerHTML = `Characater Not Found`
-        }
-
-
-
 
     }
-    else {
+    catch (err) {
         pTag7.style.color = "red"
-        pTag7.innerHTML = `invalid input`
+        pTag7.innerHTML = err
     }
 }
 
@@ -321,44 +321,31 @@ div8.appendChild(pTag8)
 pTag8.style.color = "green"
 
 function program8() {
-    var inputstr = document.getElementById("program8").value;
-    var inputChar = document.getElementById("program8a").value;
-    var count = 0;
-    if ((/[a-zA-Z]/).test(inputChar, inputstr)) {
+    try {
+        var getDate = document.getElementById("program8").value;
+        getDate = parseInt(getDate)
+        var getMonth = document.getElementById("program8a").value;
+        var getYear = document.getElementById("program8b").value;
+        getYear = parseInt(getYear)
+        var add = document.getElementById("program8c").value;
+        add = parseInt(add)
+        var date = new Date(`${getDate} ${getMonth}, ${getYear}`)
 
-        if (inputstr.search(inputChar) !== -1) {
+        var days = date.getDate()
+        var weeks = days + add * 7
+        date.setDate(weeks)
+        //console.log(date);
 
-            for (let i = 0; i < inputstr.length; i++) {
-                if (inputstr.charAt(i) == inputChar) {
-                    count = count + 1
-                }
-
-            }
-            pTag8.innerHTML = ` Your character occurs ${count} times`
-
-
-
-
-
-
-
-
+        if (date == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
         } else {
-            pTag8.style.color = "red"
-            pTag8.innerHTML = `Characater Not Found`
+            pTag8.innerHTML = `Date After ${add} Week "${date}"`
         }
 
-
-
-
-
-
-
     }
-    else {
-
+    catch (err) {
         pTag8.style.color = "red"
-        pTag8.innerHTML = `Invalid Input`
+        pTag8.innerHTML = err
     }
 }
 
@@ -372,25 +359,31 @@ var pTag9 = document.createElement("p");
 div9.appendChild(pTag9)
 pTag9.style.color = "green"
 function program9() {
-    var inputstr = document.getElementById("program9").value;
-    var inputChar = document.getElementById("program9a").value;
-    if ((/[a-zA-Z]/).test(inputChar, inputstr)) {
-        if (inputstr.search(inputChar) !== -1) {
-            var index = inputstr.search(inputChar);
-            var newStr = inputstr.slice(0, index) + inputstr.slice(index + 1)
-            pTag9.innerHTML = `${newStr}`
+    try {
+        var getDate = document.getElementById("program9").value;
+        getDate = parseInt(getDate)
+        var getMonth = document.getElementById("program9a").value;
+        var getYear = document.getElementById("program9b").value;
+        getYear = parseInt(getYear)
+        var add = document.getElementById("program9c").value;
+        add = parseInt(add)
+        var date = new Date(`${getDate} ${getMonth}, ${getYear}`)
 
+        var year = date.getFullYear()
+        var addYears = year + add
+        date.setFullYear(addYears)
+        console.log(date);
+
+        if (date == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
         } else {
-            pTag9.style.color = "red"
-            pTag9.innerHTML = `Character not found`
+            pTag9.innerHTML = `Date After ${add} years "${date}"`
         }
 
-
-
     }
-    else {
+    catch (err) {
         pTag9.style.color = "red"
-        pTag9.innerHTML = `Invalid Input`
+        pTag9.innerHTML = err
     }
 
 
@@ -398,6 +391,14 @@ function program9() {
 }
 
 
+// var year = date.getTimezoneOffset()
+// console.log(year*60);
+
+
+
+// var addYears = year + 6
+// date.setFullYear(addYears)
+// console.log(date);
 
 
 
@@ -410,27 +411,36 @@ pTag10.style.color = "green"
 
 
 function program10() {
-    var inputstr = document.getElementById("program10").value;
-    var inputChar = document.getElementById("program10a").value;
-    if ((/[a-zA-Z]/).test(inputChar, inputstr)) {
-        if (inputstr.search(inputChar) !== -1) {
-            var index = inputstr.lastIndexOf(inputChar);
-            var newStr = inputstr.slice(0, index) + inputstr.slice(index + 1)
-            pTag10.innerHTML = `${newStr}`
+    try {
+        var getDate = document.getElementById("program10").value;
+        getDate = parseInt(getDate)
+        var getMonth = document.getElementById("program10a").value;
+        var getYear = document.getElementById("program10b").value;
+        getYear = parseInt(getYear)
+        // var add = document.getElementById("program10c").value;
+        // add = parseInt(add)
+        var date = new Date(`${getDate} ${getMonth}, ${getYear}`)
 
+        var offSet = date.getTimezoneOffset()
+        var seconds = offSet * 60
+
+        if (date == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
         } else {
-            pTag10.style.color = "red"
-            pTag10.innerHTML = `Character not found`
+            pTag10.innerHTML = `OffsetTimezone in Seconds=>> ${seconds}`
         }
 
-
-
     }
-    else {
+    catch (err) {
         pTag10.style.color = "red"
-        pTag10.innerHTML = `Invalid Input`
+        pTag10.innerHTML = err
     }
+
 }
+
+// var year = "1905"
+// var digit2 = year.slice(2)
+// console.log(digit2);
 
 
 //program  11
@@ -441,52 +451,29 @@ pTag11.style.color = "green"
 
 
 function program11() {
-    var inputstr = document.getElementById("program11").value;
-    var inputChar = document.getElementById("program11a").value;
-    var index = ""
-    if ((/[a-zA-Z]/).test(inputChar, inputstr)) {
-        if (inputstr.search(inputChar) !== -1) {
-            for (let i = 0; i < inputstr.length; i++) {
-                if (inputstr.charAt(i) == inputChar) {
-                    index += i + ""
+    try {
+        var getDate = document.getElementById("program11").value;
+        getDate = parseInt(getDate)
+        var getMonth = document.getElementById("program11a").value;
+        var getYear = document.getElementById("program11b").value;
+        getYear = parseInt(getYear)
+
+        var date = new Date(`${getDate} ${getMonth}, ${getYear}`)
+
+        var year = date.getFullYear()
 
 
-                    console.log(index);
-                    newArray = inputstr.split("")
-
-                    console.log(newArray);
-
-
-
-
-
-
-
-
-                }
-
-
-            }
-
-            indexArray = index.split()
-
-
-            //var index = inputstr.lastIndexOf(inputChar);
-
-            //pTag11.innerHTML = `${newStr}`
-            //console.log(index);
-
+        if (date == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
         } else {
-            pTag11.style.color = "red"
-            pTag11.innerHTML = `Character not found`
+            pTag11.innerHTML = `Full Year=>> ${year}`
+
         }
 
-
-
     }
-    else {
+    catch (err) {
         pTag11.style.color = "red"
-        pTag11.innerHTML = `Invalid Input`
+        pTag11.innerHTML = err
     }
 }
 
@@ -507,16 +494,31 @@ pTag12.style.color = "green"
 
 
 function program12() {
-    var numInput = document.getElementById("program12").value;
-    numInput = parseInt(numInput)
-    //console.log(numInput);
-    var sum = 0;
-    for (let i = 1; i < numInput; i++) {
-        sum = sum + i;
+    try {
+        var getDate = document.getElementById("program12").value;
+        getDate = parseInt(getDate)
+        var getMonth = document.getElementById("program12a").value;
+        var getYear = document.getElementById("program12b").value;
+        getYear = parseInt(getYear)
+
+        var date = new Date(`${getDate} ${getMonth}, ${getYear}`)
+        var year = date.getFullYear().toString()
+        var digit2 = year.slice(2)
+        // console.log(digit2);
+
+
+        if (date == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
+        } else {
+            pTag12.innerHTML = `Two digit representation of a Year=>> ${digit2}`
+
+        }
 
     }
-    //console.log(sum);
-    pTag12.innerHTML = `Sum = ${sum}`
+    catch (err) {
+        pTag12.style.color = "red"
+        pTag12.innerHTML = err
+    }
 }
 
 
@@ -529,25 +531,33 @@ pTag13.style.color = "green"
 
 
 function program13() {
-    var numInput = document.getElementById("program13").value;
-    numInput = parseInt(numInput)
-    var sum = 0
-    if ((/^[0-9]+$/).test(numInput)) {
-        for (let i = 0; i < numInput; i++) {
-            if (i % 2 == 0) {
-                sum = sum + i
-            }
+    try {
+        var getDate = document.getElementById("program13").value;
+        getDate = parseInt(getDate)
+        var getMonth = document.getElementById("program13a").value;
+        var getYear = document.getElementById("program13b").value;
+        getYear = parseInt(getYear)
+
+        var date = new Date(`${getDate} ${getMonth}, ${getYear}`)
+        var month = date.getMonth()
+        var monthArray = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+
+
+
+
+        if (date == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
+        } else {
+            pTag13.innerHTML = `Short Representation of a Month=>> "${monthArray[month]}"`
 
         }
 
-        console.log(sum);
-        pTag13.innerHTML = `Sum = ${sum}`
     }
-    else {
-
-        pTag13.innerHTML = `please Enter a number`
+    catch (err) {
+        pTag13.style.color = "red"
+        pTag13.innerHTML = err
     }
-
 }
 
 
@@ -565,30 +575,34 @@ pTag14.style.color = "green"
 
 function program14() {
 
-    var numInput = document.getElementById("program13").value;
-    numInput = parseInt(numInput)
-    var sum = 0
-    if ((/^[0-9]+$/).test(numInput)) {
-        for (let i = 0; i < numInput; i++) {
-            if (i % 2 !== 0) {
-                sum = sum + i
-            }
+    try {
+        var getDate = document.getElementById("program14").value;
+        getDate = parseInt(getDate)
+        var getMonth = document.getElementById("program14a").value;
+        var getYear = document.getElementById("program14b").value;
+        getYear = parseInt(getYear)
+
+        var date = new Date(`${getDate} ${getMonth}, ${getYear}`)
+        var month = date.getMonth()
+        var monthArray = ["January", "Febraury", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+
+
+
+        if (date == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
+        } else {
+            pTag14.innerHTML = `Short Representation of a Month=>> "${monthArray[month]}"`
 
         }
 
-        console.log(sum);
-        pTag13.innerHTML = `Sum = ${sum}`
     }
-    else {
-
-        pTag13.innerHTML = `please Enter a number`
+    catch (err) {
+        pTag14.style.color = "red"
+        pTag14.innerHTML = err
     }
 
 }
-
-
-
-
 
 
 
@@ -603,23 +617,38 @@ pTag15.style.color = "green"
 
 function program15() {
 
-    var numInput = document.getElementById("program15").value;
-    numInput = parseInt(numInput)
-    var result = ""
-    if ((/^[0-9]+$/).test(numInput)) {
+    try {
+        var getDate = document.getElementById("program15").value;
+        getDate = parseInt(getDate)
+        var getMonth = document.getElementById("program15a").value;
+        var getYear = document.getElementById("program15b").value;
+        getYear = parseInt(getYear)
 
-        for (let i = 1; i <= 10; i++) {
-            calculation = numInput * i
-            result = result + `${numInput} * ${i} = ${calculation} <br>`
+        var date = new Date(`${getDate} ${getMonth}, ${getYear}`)
+        var month = date.getMonth() + 1
+        if (month < 9) {
+            var numericValues = "0" + month
+        }
+        else {
+            var numericValues = month
         }
 
-        pTag15.innerHTML = `Your Table is here : <br> ${result}`
+
+
+
+
+
+        if (date == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
+        } else {
+            pTag15.innerHTML = `Numeric Representation of a Month=>> ${numericValues}`
+
+        }
+
     }
-
-
-
-    else {
-        pTag15.innerHTML = `please Enter a number`
+    catch (err) {
+        pTag15.style.color = "red"
+        pTag15.innerHTML = err
     }
 
 }
@@ -633,13 +662,31 @@ pTag16.style.color = "green"
 
 
 function program16() {
-    var numInput = document.getElementById("program16").value;
-    var lastIndex = numInput.length - 1;
-    // console.log(lastIndex);
-    var firstDigit = numInput.charAt(0)
-    var lastDigit = numInput.charAt(lastIndex)
+    try {
+        var getDate = document.getElementById("program16").value;
+        getDate = parseInt(getDate)
+        var getMonth = document.getElementById("program16a").value;
+        var getYear = document.getElementById("program16b").value;
+        getYear = parseInt(getYear)
 
-    pTag16.innerHTML = `First Digit => ${firstDigit} <br> Last Digit => ${lastDigit}`
+        var date = new Date(`${getDate} ${getMonth}, ${getYear}`)
+        var year = date.getFullYear()
+        var currentDate = new Date()
+        var currentYear = currentDate.getFullYear()
+        var age = currentYear - year
+
+        if (date == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
+        } else {
+            pTag16.innerHTML = `Your Age is =>> ${age}`
+
+        }
+
+    }
+    catch (err) {
+        pTag16.style.color = "red"
+        pTag16.innerHTML = err
+    }
 }
 
 
@@ -656,16 +703,32 @@ pTag17.style.color = "green"
 
 
 function program17() {
-    var numInput = document.getElementById("program17").value;
-    var lastIndex = numInput.length - 1;
-    // console.log(lastIndex);
-    var firstDigit = numInput.charAt(0)
-    var lastDigit = numInput.charAt(lastIndex)
-    var intDigit1 = parseInt(firstDigit)
-    var intDigit2 = parseInt(lastDigit)
-    var sum = intDigit1 + intDigit2
-    console.log(sum);
-    pTag17.innerHTML = `Sum = ${sum}`
+    try {
+        var getDate = document.getElementById("program17").value;
+        getDate = parseInt(getDate)
+        var getMonth = document.getElementById("program17a").value;
+        var getYear = document.getElementById("program17b").value;
+        getYear = parseInt(getYear)
+
+        var date = new Date(`${getDate} ${getMonth}, ${getYear}`)
+        var week = date.getDay()
+        var dayArray = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+
+
+
+        if (date == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
+        } else {
+            pTag17.innerHTML = `Full Representation of a Week Day =>> "${dayArray[week]}"`
+
+        }
+
+    }
+    catch (err) {
+        pTag17.style.color = "red"
+        pTag17.innerHTML = err
+    }
 }
 
 
@@ -678,19 +741,32 @@ pTag18.style.color = "green"
 
 
 function program18() {
-    var sum = 0
-    var numInput = document.getElementById("program18").value;
+    try {
+        var getDate = document.getElementById("program18").value;
+        getDate = parseInt(getDate)
+        var getMonth = document.getElementById("program18a").value;
+        var getYear = document.getElementById("program18b").value;
+        getYear = parseInt(getYear)
+
+        var date = new Date(`${getDate} ${getMonth}, ${getYear}`)
+        var week = date.getDay()
+        var dayArray = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]
 
 
 
-    for (let i = 0; i < numInput.length; i++) {
-        sum = sum + parseInt(numInput.charAt(i))
+
+        if (date == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
+        } else {
+            pTag18.innerHTML = `Representation of a Week Day =>> "${dayArray[week]}"`
+
+        }
 
     }
-
-
-    pTag18.innerHTML = `Sum of all Digits = ${sum}`
-
+    catch (err) {
+        pTag18.style.color = "red"
+        pTag18.innerHTML = err
+    }
 }
 
 // program 19..........
@@ -703,16 +779,46 @@ pTag19.style.color = "green"
 
 
 function program19() {
-    var numInput = document.getElementById("program19").value;
-    var result = 1;
-    for (let i = 0; i < numInput.length; i++) {
-        result = result * parseInt(numInput.charAt(i))
+    try {
+
+        var date = new Date()
+        var months = date.getMonth() + 1
+        var dateOfMonth = date.getDate()
+
+        var totalDays = months * 30
+        var remainDays;
+        var finalResult;
+
+
+        if (months == 2) {
+
+            remainDays = 28 - dateOfMonth
+            finalResult = totalDays - remainDays
+        } else if (months == 1 || months == 3 || months == 5 || months == 7 || months == 8 || months == 10 || months == 12) {
+
+            remainDays = 31 - dateOfMonth
+            finalResult = totalDays - remainDays
+
+        }
+        else {
+
+            remainDays = 30 - dateOfMonth
+            finalResult = totalDays - remainDays
+        }
+
+
+        if (date == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
+        } else {
+            pTag19.innerHTML = `Number of days passed =>> ${finalResult}`
+
+        }
 
     }
-
-
-    //console.log(countNum);
-    pTag19.innerHTML = `Product of Digits ${result}`
+    catch (err) {
+        pTag19.style.color = "red"
+        pTag19.innerHTML = err
+    }
 }
 
 
@@ -724,20 +830,33 @@ div20.appendChild(pTag20)
 pTag20.style.color = "green"
 
 function program20() {
-    var numInput = document.getElementById("program20").value;
-    if (numInput > 9) {
-        var lastIndex = numInput.length - 1;
 
-        var firstDigit = numInput.charAt(0)
-        var lastDigit = numInput.charAt(lastIndex)
+    try {
+        var numOfDays;
+        var getYear = document.getElementById("program20").value;
+        getYear = parseInt(getYear)
+        if (getYear % 4 == 0 && getYear % 100 !== 0 || getYear % 400 == 0) {
+            numOfDays = 366
+        } else {
+            numOfDays = 365
 
-        newNum = lastDigit + numInput.slice(1, lastIndex) + firstDigit
-        pTag20.style.color = "green"
+        }
 
-        pTag20.innerHTML = `Swapping First & Last Digits : ${newNum}`;
-    } else {
+
+
+
+
+        if (isNaN(getYear) !== false) {
+            throw "Please Follow the Correct Format / Invalid Values"
+        } else {
+            pTag20.innerHTML = `Number of Days in ${getYear} =>> ${numOfDays} days`
+
+        }
+
+    }
+    catch (err) {
         pTag20.style.color = "red"
-        pTag20.innerHTML = `Please Enter Atleast Two Digit Number`
+        pTag20.innerHTML = err
     }
 
 }
@@ -754,40 +873,30 @@ pTag21.style.color = "green"
 
 function program21() {
 
-    var strInput = document.getElementById("program21").value;
-    var char1 = document.getElementById("program21a").value;
-    var char2 = document.getElementById("program21b").value;
-    console.log(strInput);
-    console.log(char1);
-    console.log(char2);
+    try {
 
-    if ((/[a-zA-Z]/).test(char1, strInput, char2)) {
-        if (strInput.search(char1) !== -1) {
-            // for (let i = 0; i < strInput.length; i++) {
-            //if (strInput.charAt(i) == char1) {
+        var getMonth = document.getElementById("program20a").value;
+        var getYear = document.getElementById("program20").value;
+        getYear = parseInt(getYear)
 
-            newStr = strInput.replace(char1, char2)
-            pTag21.innerHTML = `New String :${newStr}`
+        var date = new Date(`${getDate} ${getMonth}, ${getYear}`)
+        var week = date.getDay()
+        var dayArray = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]
 
 
 
 
-
-        }
-
-
-        else {
-            pTag21.style.color = "red"
-            pTag21.innerHTML = `Character not found`
-
+        if (date == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
+        } else {
+            pTag18.innerHTML = `Representation of a Week Day =>> "${dayArray[week]}"`
 
         }
 
     }
-
-    else {
-        pTag21.style.color = "red"
-        pTag21.innerHTML = `Invalid Input`
+    catch (err) {
+        pTag18.style.color = "red"
+        pTag18.innerHTML = err
     }
 
 }
@@ -808,63 +917,68 @@ pTag22.style.color = "green"
 
 function program22() {
 
-    var strInput = document.getElementById("program22").value;
-    var char1 = document.getElementById("program22a").value;
-    var char2 = document.getElementById("program22b").value;
-    //console.log(strInput);
-    // console.log(char1);
-    // console.log(char2);
+    try {
 
-    if ((/[a-zA-Z]/).test(char1, strInput, char2)) {
-        if (strInput.search(char1) !== -1) {
-            for (let i = 0; i < strInput.length; i++) {
-                if (strInput.charAt(i) == char1) {
-                    index = strInput.lastIndexOf(strInput.charAt(i))
-                    //console.log(index);
+        var getDate1 = document.getElementById("program22").value;
+        getDate1 = parseInt(getDate1)
+        var getMonth1 = document.getElementById("program22a").value;
+        getMonth1 = parseInt(getMonth1)
+        var getYear1 = document.getElementById("program22b").value;
+        getYear1 = parseInt(getYear1)
+        var getDate2 = document.getElementById("program22c").value;
+        getDate2 = parseInt(getDate2)
+        var getMonth2 = document.getElementById("program22d").value;
+        getMonth2 = parseInt(getMonth2)
+        var getYear2 = document.getElementById("program22e").value;
+        getYear2 = parseInt(getYear2)
 
-
-
-
-                    var newStr = strInput.split("")
-
-                    //console.log(newStr);
-
-                    newStr.splice(index, 1, char2)
-                    //console.log(newStr);
-                    var finalStr = newStr.join("")
+        var date1 = new Date(`${getMonth1 - 1}/${getDate1}/${getYear1}`)
+        var date2 = new Date(`${getMonth2 - 1}/${getDate2}/${getYear2}`)
 
 
 
-                    //strInput[index] = char2
-                    pTag22.innerHTML = `New String : ${finalStr}`
-                    // console.log(finalStr);
 
 
-                }
-
-
+        if (date1 == "Invalid Date" || date2 == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
+        } else {
+            if (date1.getFullYear() < date2.getFullYear() || date1.getDate() < date2.getDate() || date1.getMonth() < date2.getMonth()) {
+                console.log("date 2 is greater");
+                pTag22.innerHTML = `Date 2 is Greater`
+            } else if (date1.getFullYear() > date2.getFullYear() || date1.getDate() > date2.getDate() || date1.getMonth() > date2.getMonth()) {
+                console.log("date 1 is greater");
+                pTag22.innerHTML = `Date 1 is Greater`
+            }
+            else {
+                console.log("both are equal");
+                pTag22.innerHTML = `Both are Equal`
             }
 
 
         }
 
-        else {
-            pTag22.style.color = "red"
-            pTag22.innerHTML = `Character not found`
-
-
-        }
-
     }
-
-    else {
+    catch (err) {
         pTag22.style.color = "red"
-        pTag22.innerHTML = `Invalid Input`
+        pTag22.innerHTML = err
     }
 
 }
 
 
+//   var date1 = new Date(`2013,2`)
+//  console.log(date1.getMonth());
+//  var date2 = new Date(`11/14/2013`)
+//  console.log(date2);
+// var monthsIntoDays = (date1.getMonth() + 1)*30
+// var totalDays = (date1.getFullYear() - date2.getFullYear())*365 -(date1.getDate() + monthsIntoDays)
+// var monthsIntoDays2 = (date2.getMonth() + 1)*30
+// var totalDays2 = (date1.getFullYear() - date2.getFullYear())*365 -(date2.getDate() + monthsIntoDays2)
+// console.log(totalDays);
+// console.log(totalDays2);
+
+// var difference = totalDays - totalDays2;
+// console.log(difference);
 
 
 
@@ -879,62 +993,56 @@ pTag23.style.color = "green"
 
 
 function program23() {
-    var strInput = document.getElementById("program23").value;
-    var char1 = document.getElementById("program23a").value;
-    var char2 = document.getElementById("program23b").value;
-    //console.log(strInput);
-    // console.log(char1);
-    // console.log(char2);
-    var temporaryVariable = []
-    if ((/[a-zA-Z]/).test(char1, strInput, char2)) {
-        if (strInput.search(char1) !== -1) {
-            for (let i = 0; i < strInput.length; i++) {
-                if (strInput.charAt(i) == char1) {
-                    index = i
-                    console.log(index);
+    try {
+
+        var getDate1 = document.getElementById("program23").value;
+        getDate1 = parseInt(getDate1)
+        var getMonth1 = document.getElementById("program23a").value;
+        getMonth1 = parseInt(getMonth1)
+        var getYear1 = document.getElementById("program23b").value;
+        getYear1 = parseInt(getYear1)
+        var getDate2 = document.getElementById("program23c").value;
+        getDate2 = parseInt(getDate2)
+        var getMonth2 = document.getElementById("program23d").value;
+        getMonth2 = parseInt(getMonth2)
+        var getYear2 = document.getElementById("program23e").value;
+        getYear2 = parseInt(getYear2)
+
+        var date1 = new Date(`${getMonth1 - 1}/${getDate1}/${getYear1}`)
+        var date2 = new Date(`${getMonth2 - 1}/${getDate2}/${getYear2}`)
 
 
 
 
-                    var newStr = strInput.split("")
 
-                    //console.log(newStr);
+        if (date1 == "Invalid Date" || date2 == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
+        } else {
 
-                    newStr.splice(index, 1, char2)
-                    console.log(newStr);
-                    var finalStr = temporaryVariable.join("")
-                    console.log(finalStr);
+            var monthsIntoDays = (date1.getMonth() + 1) * 30
+            var totalDays = 365 - (date1.getDate() + monthsIntoDays)
+            var monthsIntoDays2 = (date2.getMonth() + 1) * 30
+            var totalDays2 = 365 - (date2.getDate() + monthsIntoDays2)
+            console.log(totalDays);
+            console.log(totalDays2);
 
-
-                    //strInput[index] = char2
-
-
-
-
-                }
-
-
-            }
-            console.log(finalStr);
-            //pTag23.innerHTML = `New String : ${finalStr}`
-
-        }
-
-        else {
-            pTag23.style.color = "red"
-            pTag23.innerHTML = `Character not found`
+            var difference = totalDays - totalDays2;
+            console.log(difference);
+            pTag23.innerHTML = `Difference b/w Dates in Days =>> ${difference} days`
 
 
         }
 
     }
-
-    else {
+    catch (err) {
         pTag23.style.color = "red"
-        pTag23.innerHTML = `Invalid Input`
+        pTag23.innerHTML = err
     }
+
+
 
 }
+
 
 
 
@@ -952,19 +1060,49 @@ pTag24.style.color = "green"
 function program24() {
 
 
-    var strInput = document.getElementById("program24").value;
-    for (let i = 0; i < alphabets.length; i++) {
-        // if (strInput.charAt(i) ==   ) {
-
-        // } 
+    try {
 
 
+        var getMonth1 = document.getElementById("program24a").value;
+        getMonth1 = parseInt(getMonth1)
+        var getYear1 = document.getElementById("program24b").value;
+        getYear1 = parseInt(getYear1)
+
+        var date = new Date(`${getYear1},${getMonth1}`)
+        var lastDay;
+
+
+
+
+
+        if (date == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
+        } else {
+            if (date.getMonth() == 1 && date.getFullYear() % 4 == 0 && date.getFullYear() % 100 !== 0 || date.getFullYear() % 400 == 0) {
+                lastDay = 29
+
+            }
+            else if (date.getMonth() == 3 || date.getMonth() == 5 || date.getMonth() == 8 || date.getMonth() == 10) {
+                lastDay = 30
+            }
+            else if (date.getMonth() == 0 || date.getMonth() == 2 || date.getMonth() == 4 || date.getMonth() == 6 || date.getMonth() == 7 || date.getMonth() == 9 || date.getMonth() == 11) {
+                lastDay = 31
+            }
+            else {
+                lastDay = 28
+            }
+            pTag24.innerHTML = `Last Day =>> ${lastDay}`
+
+
+        }
 
     }
-    console.log(count);
+    catch (err) {
+        pTag24.style.color = "red"
+        pTag24.innerHTML = err
+    }
 
 }
-
 
 
 
@@ -980,35 +1118,112 @@ pTag25.style.color = "green"
 
 
 function program25() {
-    var blankSpcStr = document.getElementById("program25").value;
-    var blankSpc = blankSpcStr.replace(/ /g, "")
-    pTag25.innerHTML = `Answer is : ${blankSpc}`
+    try {
+
+        var getDate1 = document.getElementById("program25").value;
+        getDate1 = parseInt(getDate1)
+        var getMonth1 = document.getElementById("program25a").value;
+        getMonth1 = parseInt(getMonth1)
+        var getYear1 = document.getElementById("program25b").value;
+        getYear1 = parseInt(getYear1)
+        var getDate2 = document.getElementById("program25c").value;
+        getDate2 = parseInt(getDate2)
+        var getMonth2 = document.getElementById("program25d").value;
+        getMonth2 = parseInt(getMonth2)
+        var getYear2 = document.getElementById("program25e").value;
+        getYear2 = parseInt(getYear2)
+
+        var date1 = new Date(`${getMonth1 - 1}/${getDate1}/${getYear1}`)
+        var date2 = new Date(`${getMonth2 - 1}/${getDate2}/${getYear2}`)
+
+
+
+
+
+
+        if (date1 == "Invalid Date" || date2 == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
+        } else {
+
+            
+            if (date1.getTime() > date2.getTime()) {
+                var dt = (date1.getTime() - date2.getTime()) / 1000
+            } else {
+                var dt = (date2.getTime() - date1.getTime()) / 1000
+            }
+            //console.log(dt);
+            var dtInYears = dt / (60 * 60 * 24)
+            dtInYears= Math.round(dtInYears/365.25)
+        
+            pTag25.innerHTML = `Difference b/w Dates in Years =>> ${dtInYears} Years`
+
+
+        }
+
+    }
+    catch (err) {
+        pTag25.style.color = "red"
+        pTag25.innerHTML = err
+    }
+
 }
 
-
-// program  26
+// program 26 
 var div26 = document.getElementById("divProgram26");
 var pTag26 = document.createElement("p");
 div26.appendChild(pTag26)
 pTag26.style.color = "green"
 
-
 function program26() {
-    var userLeading = document.getElementById("program26").value;
-    var leadingStr = userLeading.trimLeft()
-    if (userLeading == "") {
-        alert("Enter a string value")
-    }
-    else if (leadingStr == userLeading) {
-        console.log(`${userLeading} does not contain any Leading spaces`);
-        pTag26.innerHTML = `${userLeading} does not contain any Leading spaces`;
-    }
-    else {
-        console.log(`String before = "${userLeading}" string After = "${leadingStr}"`);
-        alert(`String before = "${userLeading}" String After = "${leadingStr}"`)
-    }
-}
+    try {
 
+        var getDate1 = document.getElementById("program26").value;
+        getDate1 = parseInt(getDate1)
+        var getMonth1 = document.getElementById("program26a").value;
+        getMonth1 = parseInt(getMonth1)
+        var getYear1 = document.getElementById("program26b").value;
+        getYear1 = parseInt(getYear1)
+        var getDate2 = document.getElementById("program26c").value;
+        getDate2 = parseInt(getDate2)
+        var getMonth2 = document.getElementById("program26d").value;
+        getMonth2 = parseInt(getMonth2)
+        var getYear2 = document.getElementById("program26e").value;
+        getYear2 = parseInt(getYear2)
+
+        var date1 = new Date(`${getMonth1 - 1}/${getDate1}/${getYear1}`)
+        var date2 = new Date(`${getMonth2 - 1}/${getDate2}/${getYear2}`)
+
+
+
+
+
+
+        if (date1 == "Invalid Date" || date2 == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
+        } else {
+           
+            
+                if (date1.getTime() > date2.getTime()) {
+                    var dt = (date1.getTime() - date2.getTime()) / 1000
+                } else {
+                    var dt = (date2.getTime() - date1.getTime()) / 1000
+                }
+                //console.log(dt);
+                var dtInMonths = dt / (60 * 60 * 24 * 7 * 4)
+                dtInMonths = Math.round(dtInMonths)
+            
+            pTag26.innerHTML = `Difference b/w Dates in Months =>> ${dtInMonths} months`
+
+
+        }
+
+    }
+    catch (err) {
+        pTag26.style.color = "red"
+        pTag26.innerHTML = err
+    }
+
+}
 
 
 
@@ -1021,24 +1236,66 @@ pTag27.style.color = "green"
 
 
 function program27() {
-    var userTrailing = document.getElementById("program27").value;
-    var trailingStr = userTrailing.trimRight()
-    if (userTrailing == "") {
-        alert("Enter a string value")
+    try {
+
+        var getDate1 = document.getElementById("program27").value;
+        getDate1 = parseInt(getDate1)
+        var getMonth1 = document.getElementById("program27a").value;
+        getMonth1 = parseInt(getMonth1)
+        var getYear1 = document.getElementById("program27b").value;
+        getYear1 = parseInt(getYear1)
+        var getDate2 = document.getElementById("program27c").value;
+        getDate2 = parseInt(getDate2)
+        var getMonth2 = document.getElementById("program27d").value;
+        getMonth2 = parseInt(getMonth2)
+        var getYear2 = document.getElementById("program27e").value;
+        getYear2 = parseInt(getYear2)
+
+        var date1 = new Date(`${getMonth1}/${getDate1}/${getYear1}`)
+        var date2 = new Date(`${getMonth2}/${getDate2}/${getYear2}`)
+
+
+
+
+
+
+        if (date1 == "Invalid Date" || date2 == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
+        } else {
+            if (date1.getTime() > date2.getTime()) {
+                var dt = (date1.getTime() - date2.getTime()) / 1000
+            } else {
+                var dt = (date2.getTime() - date1.getTime()) / 1000
+            }
+            //console.log(dt);
+            var dtInWeeks = dt / (60 * 60 * 24 * 7)
+            dtInWeeks = Math.round(dtInWeeks)
+
+            //console.log(dtInWeeks);
+            pTag27.innerHTML = `Difference b/w Dates in Weeks =>> ${dtInWeeks} weeks`
+
+
+        }
+
     }
-    else if (trailingStr == userTrailing) {
-        console.log(`${userTrailing} does not contain any Leading spaces`);
-        pTag27.innerHTML = `${userLeading} does not contain any Leading spaces`;
-    }
-    else {
-        console.log(`String before  = "${userTrailing}" String After = "${trailingStr}"`);
-        alert(`String Before = "${userTrailing}" String After = "${trailingStr}"`)
+    catch (err) {
+        pTag27.style.color = "red"
+        pTag27.innerHTML = err
     }
 
 }
 
+// var date1 = new Date(`25/1/2021`)
+// var date2 = new Date(`4/5/2021`)
+// console.log(date2);
 
-// program 4 (28)
+
+
+
+
+
+
+// program 28
 
 var div28 = document.getElementById("divProgram28");
 var pTag28 = document.createElement("p");
@@ -1047,22 +1304,63 @@ pTag28.style.color = "green"
 
 
 function program28() {
-    var userTL = document.getElementById("program28").value;
-    var trimStr = userTL.trim()
-    if (userTL == "") {
-        alert("Enter a string value")
-    }
-    else if (trimStr == userTL) {
-        console.log(`${userTL} does not contain any Leading spaces`);
-        pTag28.innerHTML = `${userTL} does not contain any Leading spaces`;
-    }
-    else {
-        console.log(`String before  = "${userTL}" String After = "${trimStr}"`);
-        alert(`String before trim  = "${userTL}" Required string = "${trimStr}"`)
-    }
+    
+    var date = new Date()
+var dayOfWeek = date.getDay()
+var currentDate = date.getDate()
+ var days = ["sun","mon","tue","wed","thur","fri","sat"]
+ if (dayOfWeek == 0) {
+    //console.log(days[0]);
+     date.setDate(currentDate - 0)
+     //console.log("Your Week Starts Today");
+     pTag28.innerHTML = `Your Week Starts Today`
+ }
+ else if (dayOfWeek == 1) {
+    //console.log(days[1]);
+    date.setDate(currentDate - 1)
+   // console.log(date.getDate());
+    pTag28.innerHTML = `Your Week Started on ${date.getDate()}  of this month  `
+ }
+ else if (dayOfWeek == 2) {
+    //console.log(days[2]);
+    date.setDate(currentDate - 2)
+    //console.log(date.getDate());
+    pTag28.innerHTML = `Your Week Started on ${date.getDate()} of this month `
+}
+else if (dayOfWeek == 3) {
+    //console.log(days[3]); 
+    date.setDate(currentDate - 3)
+    //console.log(date.getDate());
+    pTag28.innerHTML = `Your Week Started on ${date.getDate()} of this month `
+}
+else if (dayOfWeek == 4) {
+    //console.log(days[4]); 
+    date.setDate(currentDate - 4)
+    //console.log(date.getDate());
+    pTag28.innerHTML = `Your Week Started on ${date.getDate()} of this month`
+}
+else if (dayOfWeek == 5) {
+    //console.log(days[5]);
+    date.setDate(currentDate - 5)
+    //console.log(date.getDate());
+    pTag28.innerHTML = `Your Week Started on ${date.getDate()} of this month  `
+}
+else {
+    //console.log(days[6]);
+    date.setDate(currentDate - 5)
+    //console.log(date.getDate());
+    pTag28.innerHTML = `Your Week Started on ${date.getDate()} of this month  `
+}
 
 
 }
+
+    
+     
+ 
+
+    
+
 
 // program 5 (29)
 var div29 = document.getElementById("divProgram29");
@@ -1072,28 +1370,52 @@ pTag29.style.color = "green"
 
 
 function program29() {
-    var inputArray1 = [];
-    var mergeNum1 = document.getElementById("program29").value;
-    var inputArray2 = [];
-    var mergeNum2 = document.getElementById("program29a").value;
-
-    if (mergeNum1 < 0 || mergeNum2 < 0) {
-        alert("Invalid Input")
+    var date = new Date()
+    var dayOfWeek = date.getDay()
+    var currentDate = date.getDate()
+     var days = ["sun","mon","tue","wed","thur","fri","sat"]
+     if (dayOfWeek == 0) {
+        //console.log(days[0]);
+         date.setDate(currentDate + 6)
+         //console.log("Your Week Starts Today");
+         pTag29.innerHTML = `Your Week Starts Today`
+     }
+     else if (dayOfWeek == 1) {
+        //console.log(days[1]);
+        date.setDate(currentDate + 5)
+       // console.log(date.getDate());
+        pTag29.innerHTML = `Your Week Ends on ${date.getDate()}/${date.getMonth()+ 1}/${date.getFullYear()}`
+     }
+     else if (dayOfWeek == 2) {
+        //console.log(days[2]);
+        date.setDate(currentDate + 4)
+        //console.log(date.getDate());
+        pTag29.innerHTML = `Your Week Ends on ${date.getDate()}/${date.getMonth()+ 1}/${date.getFullYear()}`
+    }
+    else if (dayOfWeek == 3) {
+        //console.log(days[3]); 
+        date.setDate(currentDate + 3)
+        //console.log(date.getDate());
+        pTag29.innerHTML = `Your Week Ends on ${date.getDate()}/${date.getMonth()+ 1}/${date.getFullYear()}`
+    }
+    else if (dayOfWeek == 4) {
+        //console.log(days[4]); 
+        date.setDate(currentDate + 2)
+        //console.log(date.getDate());
+        pTag29.innerHTML =`Your Week Ends on ${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
+    }
+    else if (dayOfWeek == 5) {
+        //console.log(days[5]);
+        date.setDate(currentDate + 1)
+        //console.log(date.getDate());
+        pTag29.innerHTML = `Your Week Ends on ${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
     }
     else {
-        for (var i = 0; i < mergeNum1; i++) {
-            inputArray1[i] = prompt(`Array 1 element` + (i + 1));
-        }
-        for (var i = 0; i < mergeNum2; i++) {
-            inputArray2[i] = prompt(`Array 2 element` + (i + 1));
-        }
-        console.log(inputArray1);
-        console.log(inputArray2);
+        //console.log(days[6]);
+        date.setDate(currentDate + 0)
+        //console.log(date.getDate());
+        pTag29.innerHTML = `Your Week Ends Today`
     }
-    mergeOutput = inputArray1.concat(inputArray2)
-    pTag29.innerHTML = `Array 1 = [${inputArray1}]<br> Array 2 = [${inputArray2}] <br> Merged Array = [${mergeOutput}]`
-    //console.log(`Array 1 = [${inputArray1}] Array 2 = [${inputArray2}] Merged Array = [${mergeOutput}]`);
-
 
 }
 // program 30
