@@ -1425,21 +1425,14 @@ div30.appendChild(pTag30)
 pTag30.style.color = "green"
 
 function program30() {
-    var inputArray = [];
-    var dupNum = document.getElementById("program30").value;
-    if (dupNum < 0) {
-        alert("Invalid Input")
-    }
-    else {
-        for (var i = 0; i < dupNum; i++) {
-            inputArray[i] = prompt(`Array element` + (i + 1));
-        }
-        //console.log(inputArray);
-    }
-    inputArray = [...new Set(inputArray)]
-    pTag30.innerHTML = `New Array is Here :- <br> [${inputArray}]`
-    // console.log(`Array after deleting duplicate elements :- [${inputArray}]`);
+    var date =  new Date()
+    var month = date.getDate()
+   // console.log(month);
+    date.setDate(1)
+   // console.log(`${date}`);
+    pTag30.innerHTML = `${date}`
 }
+
 
 
 
@@ -1456,27 +1449,25 @@ pTag31.style.color = "green"
 
 
 function program31() {
-    var inputArray = [];
-    var numDup = document.getElementById("program31").value;
-    if (numDup < 0) {
-        alert("Invalid Input")
+    var date =  new Date()
+    var month = date.getDate()
+    console.log(month);
+    if (date.getMonth() == 0 || date.getMonth() == 2 || date.getMonth() == 4 || date.getMonth() == 6 || date.getMonth() == 7 || date.getMonth() == 9 || date.getMonth() == 11 ) {
+        date.setDate(31)
+    } else if (date.getMonth() == 3 || date.getMonth() == 5 || date.getMonth() == 8 || date.getMonth() == 10) {
+        date.setDate(30)
+    } 
+    else if (date.getMonth() == 1 && date.getFullYear() % 4 == 0 && date.getFullYear() % 100 !== 0 || date.getFullYear() % 400 == 0) {
+       
     }
-    else {
-        for (var i = 0; i < numDup; i++) {
-            inputArray[i] = prompt(`Array element` + (i + 1));
-        }
-        console.log(inputArray);
+    else{
+        date.setDate(28)
     }
-    var outputArray = [...new Set(inputArray)].length
-    if (outputArray == inputArray.length) {
-        outputArray = 0
-    }
-    else {
-        outputArray = (outputArray - inputArray.length) * (-1)
-    }
-
-    pTag31.innerHTML = `Number of duplicate elements In Array Are :- <br> ${outputArray}`
-    //console.log(`Number of duplicate elements in given array is :- ${outputArray}`);
+        
+    
+  
+    console.log(`${date}`);
+    pTag31.innerHTML = `${date}`
 }
 
 
@@ -1491,20 +1482,52 @@ div32.appendChild(pTag32)
 pTag32.style.color = "green"
 
 function program32() {
-    var inputArray = [];
-    var numUnique = document.getElementById("program32").value;
-    if (numUnique < 0) {
-        alert("Invalid Input")
-    }
-    else {
-        for (var i = 0; i < numUnique; i++) {
-            inputArray[i] = prompt(`Array element` + (i + 1));
+    try {
+
+        var getDate1 = document.getElementById("program32").value;
+        getDate1 = parseInt(getDate1)
+        var getMonth1 = document.getElementById("program32a").value;
+        getMonth1 = parseInt(getMonth1)
+        var getYear1 = document.getElementById("program32b").value;
+        getYear1 = parseInt(getYear1)
+        var getDate2 = document.getElementById("program32c").value;
+        getDate2 = parseInt(getDate2)
+        var getMonth2 = document.getElementById("program32d").value;
+        getMonth2 = parseInt(getMonth2)
+        var getYear2 = document.getElementById("program32e").value;
+        getYear2 = parseInt(getYear2)
+
+        var date1 = new Date(`${getMonth1}/${getDate1}/${getYear1}`)
+        var date2 = new Date(`${getMonth2}/${getDate2}/${getYear2}`)
+
+
+
+
+
+
+        if (date1 == "Invalid Date" || date2 == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
+        } else {
+            if (date1.getTime() > date2.getTime()) {
+                var dt = (date1.getTime() - date2.getTime()) / 1000
+            } else {
+                var dt = (date2.getTime() - date1.getTime()) / 1000
+            }
+            //console.log(dt);
+            var dtInHours = dt / (60 * 60)
+            dtInHours = Math.round(dtInHours)
+
+            //console.log(dtInWeeks);
+            pTag32.innerHTML = `Difference b/w Dates in Hours =>> ${dtInHours} Hours`
+
+
         }
-        //console.log(inputArray);
+
     }
-    uniqueArray = [...new Set(inputArray)]
-    pTag32.innerHTML = `Unique Elements of [${inputArray}] are :- <br> ${uniqueArray}`
-    //console.log(`Unique Elements of [${inputArray}] are ${uniqueArray}`);
+    catch (err) {
+        pTag32.style.color = "red"
+        pTag32.innerHTML = err
+    }
 }
 
 
@@ -1516,21 +1539,52 @@ div33.appendChild(pTag33)
 pTag33.style.color = "green"
 
 function program33() {
-    var inputArray = [];
-    var outputArray = []
-    var reverseNum = document.getElementById("program33").value;
-    if (reverseNum < 0) {
-        alert("Invalid Input")
-    }
-    else {
-        for (var i = 0; i < reverseNum; i++) {
-            inputArray[i] = prompt(`Array element` + (i + 1));
+    try {
+
+        var getDate1 = document.getElementById("program33").value;
+        getDate1 = parseInt(getDate1)
+        var getMonth1 = document.getElementById("program33a").value;
+        getMonth1 = parseInt(getMonth1)
+        var getYear1 = document.getElementById("program33b").value;
+        getYear1 = parseInt(getYear1)
+        var getDate2 = document.getElementById("program33c").value;
+        getDate2 = parseInt(getDate2)
+        var getMonth2 = document.getElementById("program33d").value;
+        getMonth2 = parseInt(getMonth2)
+        var getYear2 = document.getElementById("program33e").value;
+        getYear2 = parseInt(getYear2)
+
+        var date1 = new Date(`${getMonth1}/${getDate1}/${getYear1}`)
+        var date2 = new Date(`${getMonth2}/${getDate2}/${getYear2}`)
+
+
+
+
+
+
+        if (date1 == "Invalid Date" || date2 == "Invalid Date") {
+            throw "Please Follow the Correct Format / Invalid Values"
+        } else {
+            if (date1.getTime() > date2.getTime()) {
+                var dt = (date1.getTime() - date2.getTime()) / 1000
+            } else {
+                var dt = (date2.getTime() - date1.getTime()) / 1000
+            }
+            //console.log(dt);
+            var dtInMinutes = dt / (60)
+            dtInMinutes = Math.round(dtInMinutes)
+
+            //console.log(dtInWeeks);
+            pTag33.innerHTML = `Difference b/w Dates in Minutes =>> ${dtInMinutes} Minutes`
+
+
         }
-        //console.log(inputArray);
+
     }
-    outputArray = inputArray.reverse()
-    //console.log(outputArray);
-    pTag33.innerHTML = `Reversed Array = ${outputArray}`
+    catch (err) {
+        pTag33.style.color = "red"
+        pTag33.innerHTML = err
+    }
 }
 
 
@@ -1543,22 +1597,11 @@ div34.appendChild(pTag34)
 pTag34.style.color = "green"
 
 function program34() {
-    var CP = parseFloat(document.getElementById("program34").value)
-    var SP = parseFloat(document.getElementById("program34a").value)
-    if (CP > SP) {
-        var loss = CP - SP
-        pTag34.innerHTML = `Cost Price : ${CP}<br> Sell Price : ${SP}<br>Loss : ${loss}`
-    }
-    else if (CP < SP) {
-        var profit = SP - CP
-        pTag34.innerHTML = `Cost Price : ${CP}<br>Sell Price : ${SP}<br>Profit: ${profit}`
-    }
-    else if (CP == SP) {
-        pTag34.innerHTML = `Cost Price :${CP}<br>Sell Price : ${SP}<br>Neither Profit Nor Loss`
-    }
-    else {
-        alert("Enter Valid Prices")
-    }
+    var date = new Date().toString()
+    console.log(date);
+    var timeZone = date.slice(34)
+    console.log(timeZone);
+    pTag34.innerHTML = `Current Timezone =>> ${timeZone}`
 }
 
 
@@ -1571,29 +1614,105 @@ div35.appendChild(pTag35)
 pTag35.style.color = "green"
 
 function program35() {
-    var root1, root2;
-    var a = parseFloat(document.getElementById("program35").value)
-    var b = parseFloat(document.getElementById("program35a").value)
-    var c = parseFloat(document.getElementById("program35b").value)
-    let discriminant = b * b - 4 * a * c;
-    if (discriminant > 0) {
-        root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
-        root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-        pTag35.innerHTML = `The roots of quadratic equation are ${root1} and ${root2}`
-        //console.log(`The roots of quadratic equation are ${root1} and ${root2}`);
-    }
-    else if (discriminant == 0) {
-        root1 = root2 = -b / (2 * a);
-        pTag35.innerHTML = `The roots of quadratic equation are ${root1} and ${root2}`
-        // console.log(`The roots of quadratic equation are ${root1} and ${root2}`);
-    }
-    else if (discriminant < 0) {
-        let realPart = (-b / (2 * a)).toFixed(2);
-        let imagPart = (Math.sqrt(-discriminant) / (2 * a)).toFixed(2);
-        pTag35.innerHTML = `The roots of quadratic equation are ${realPart} + ${imagPart}i and ${realPart} - ${imagPart}i`
-        //console.log(`The roots of quadratic equation are ${realPart} + ${imagPart}i and ${realPart} - ${imagPart}i`);
-    }
-    else {
-        alert("Invalid Input")
-    }
+    var date = new Date()
+console.log(date);
+var hours = date.getHours()
+console.log(hours);
+var x;
+if (hours < 12 ) {
+    x = `AM`
+}
+else{
+    x = `PM`
+}
+console.log(`Current Time is in :${x}`);
+pTag35.innerHTML = `Current Time is in =>> ${x}`
+}
+
+// program 36
+
+var div36 = document.getElementById("divProgram36");
+var pTag36 = document.createElement("p");
+div36.appendChild(pTag36)
+pTag36.style.color = "green"
+
+function program36() {
+    var date = new Date()
+console.log(date);
+var hours = date.getHours()
+console.log(hours);
+var x;
+if (hours < 12 ) {
+    x = `am`
+}
+else{
+    x = `pm`
+}
+console.log(`Current Time is in :${x}`);
+pTag36.innerHTML = `Current Time is in =>>${x}`
+  
+}
+
+    
+// program 37
+
+var div37 = document.getElementById("divProgram37");
+var pTag37 = document.createElement("p");
+div37.appendChild(pTag37)
+pTag37.style.color = "green"
+
+function program37() {
+    var date = new Date()
+var hours = date.getHours() % 12 
+if (hours < 10) {
+    hours = `0` + hours
+}
+else{
+    hours = `` + hours
+}
+console.log(`It's ${hours} O'Clock`);
+
+pTag37.innerHTML = `It's ${hours} O'Clock`
+  
+}
+
+// program 38
+
+var div38 = document.getElementById("divProgram38");
+var pTag38 = document.createElement("p");
+div38.appendChild(pTag38)
+pTag38.style.color = "green"
+
+function program38() {
+    var date = new Date()
+var hours = date.getHours()
+console.log(hours);
+
+
+pTag38.innerHTML = `Hours in 24-hour Format =>> ${hours}`
+  
+}
+
+  
+   
+   // program 39
+
+var div39 = document.getElementById("divProgram39");
+var pTag39 = document.createElement("p");
+div39.appendChild(pTag39)
+pTag39.style.color = "green"
+
+function program39() {
+    var minutes = document.getElementById("program39").value
+    minutes = parseInt(minutes)
+    var date = new Date()
+    date.setMinutes(minutes)
+    var getminutes = date.getMinutes()
+ if (getminutes < 10) {
+     getminutes = `0` + getminutes
+ }
+    console.log(minutes);
+
+pTag39.innerHTML = `Minutes with leading zeros =>> ${getminutes}`
+  
 }
